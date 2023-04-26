@@ -71,6 +71,39 @@ body {
     top: 10rem;
     height: 300px;
     width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: greenyellow;
     border-radius: 150px;
 }
+
+.picMe img {
+    height: inherit;
+    width: 300px;
+    border-radius: 100px;
+    /* add a box shadow effect */
+}
+
+.picMe h1 {
+    position: absolute;
+    top: 20rem;
+}
+
+.thisIAm {
+    position: absolute;
+    top: 15rem;
+    left: 35rem;
+    background-color: greenyellow;
+    height: 465px;
+    width: 600px;
+}
+
+.thisIAm p {
+    font-size: 17px;
+    line-height: 2;
+    text-indent: 50px;
+    word-spacing: 0.15rem;
+}
+
+
