@@ -8,6 +8,7 @@ body {
     width: 100%;
 }
 
+/* this is the container box that all web content will go into.  It is a grid */
 .pandoraBox {
     display: grid;
     height: 100vh;
@@ -22,6 +23,7 @@ body {
     grid-gap: 0.25rem;
 }
 
+/* navigation purposes */
 .naviGate {
     padding-right: 0.5rem;
     height: 5rem;
@@ -32,6 +34,7 @@ body {
     justify-content: end;
 }
 
+/* this puts the navigation tabs to the bottom and right of the navigation bar */
 .naviGate ul {
     margin: 0 2rem 1rem 0;
     height: 3rem;
@@ -52,6 +55,7 @@ body {
     width: 100px;
 }
 
+/* changes font size when hovered over with a mouse */
 .naviGate ul li:hover {
     cursor: pointer;
     font-size: 20px;
@@ -59,12 +63,14 @@ body {
    /* make buttons when pushed take user to that section of the page */
 }
 
+/* container for a brief summary about me.  It is a direct child of the grid */
 .whoIAm {
     background-color: darkblue;
     height: 40rem;
     grid-area: whoIAm;
 }
 
+/* a container for my picture */
 .picMe {
     margin: 2.5rem;
     position: absolute;
@@ -85,11 +91,13 @@ body {
     /* add a box shadow effect */
 }
 
+/* my name */
 .picMe h1 {
     position: absolute;
     top: 20rem;
 }
 
+/* the short summary of who I am */
 .thisIAm {
     position: absolute;
     top: 15rem;
@@ -106,4 +114,112 @@ body {
     word-spacing: 0.15rem;
 }
 
+/* container for my coding work */
+.workArt {
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    grid-area: workArt;
+}
+
+/* a grid within a container of a grid for my work to be displayed */
+.artGrid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'workOne workTwo'
+    'workThree workFour';
+    grid-gap: 0.5rem;
+}
+
+.workOne {
+    height: 200px;
+    width: 400px;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.workTwo {
+    height: 200px;
+    width: 400px;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.workThree {
+    height: 200px;
+    width: 400px;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.workFour {
+    height: 200px;
+    width: 400px;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+/* the container for my contacts */
+.reachMe {
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+    grid-area: reachMe;
+}
+
+.contactBox {
+    padding: 1rem;
+    height: 20rem;
+    width: 40rem;
+    text-align: center;
+    background-color: azure;
+}
+
+.contactBox h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contactBox h4 {
+    margin: 0.75rem 0;
+}
+
+/* container for my resume */
+.needAJob {
+    height: 70rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff7f50;
+    grid-area: needAJob;
+}
+
+/* .resumeBox {
+    /* position: absolute; */
+    /* margin-top: 10rem; */
+    /* /* height: 500px; */
+    /* width: 400px;
+} */
+
+/* the resume */
+.resumeBox img {
+    
+    height: 700px;
+    width: 500px;
+}
+
+/* the footer */
+.lastNotLeast {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+    grid-area: lastNotLeast;
+}
 
