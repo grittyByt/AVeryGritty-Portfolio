@@ -15,10 +15,7 @@ body {
     font-size: 19px;
 }
 
-
-
-@media screen and (min-width: 1200px) {
-    /* color scheme for important Titles */
+/* color scheme for important Titles */
 h1 span {
     color: #2BF4A6;
 }
@@ -30,6 +27,11 @@ h2 span {
 h4 span {
     color: #ffffff;
 }
+
+
+@media screen and (min-width: 1200px) {
+    
+
 
 /* this is the container box that all web content will go into.  It is a grid */
 
@@ -138,7 +140,7 @@ h4 span {
     display: flex;
     align-items: start;
     justify-content: space-evenly;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 /* a container for my picture */
 .picMe {
@@ -413,8 +415,78 @@ h4 span {
 }
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+    .pandoraBox {
+        margin: 0;
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        justify-content: space-between;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+        'naviGate'
+        'whoIAm'
+        'workArt'
+        'reachMe'
+        'needAJob'
+        'lastNotLeast';
+        /* flex-grow: 1; */
+        gap: 0.25rem;
+    }
 
+    .naviGate {
+        padding-right: 0.5rem;
+        height: 5rem;
+        width: 100%;
+        position: fixed;
+        background-color: #63b8dc;
+        grid-area: naviGate;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 10000;
+    }
+
+    .whoIAm {
+        height: 70rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: beige; */
+        grid-area: whoIAm;
+    }
+    
+    .profileBox {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: space-evenly;
+        /* background-color: aqua; */
+    }
+    /* a container for my picture */
+    .picMe {
+        /* margin: 2.5rem; */
+        /* position: absolute;
+        top: 10rem; */
+        height: 500px;
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 150px;
+        
+    }
+    
+    .picMe img {
+        height: inherit;
+        width: inherit;
+        border-radius: 100px;
+        /* add a box shadow effect */
+        box-shadow: 7px 9px 9px 4px rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media screen and (min-width: 480px) and (max-width: 750px) {
