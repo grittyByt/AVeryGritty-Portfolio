@@ -29,10 +29,6 @@ h4 span {
 }
 
 
-@media screen and (min-width: 1200px) {
-    
-
-
 /* this is the container box that all web content will go into.  It is a grid */
 
 .pandoraBox {
@@ -145,20 +141,14 @@ h4 span {
 /* a container for my picture */
 .picMe {
     margin: 2.5rem;
-    /* position: absolute;
-    top: 10rem; */
     height: 300px;
     width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 150px;
-    
+    text-align: center;
 }
 
 .picMe img {
     height: inherit;
-    width: 300px;
+    width: inherit;
     border-radius: 100px;
     /* add a box shadow effect */
     box-shadow: 7px 9px 9px 4px rgba(0, 0, 0, 0.2);
@@ -166,11 +156,7 @@ h4 span {
 
 /* my name */
 .picMe h1 {
-    position: relative;
-    top: 14rem;
-    right: 13rem;
-    /* position: absolute;
-    top: 20rem; */
+   margin-top: 3rem;
 }
 
 /* the short summary of who I am */
@@ -413,7 +399,9 @@ h4 span {
     background-color: #63b8dc;
     grid-area: lastNotLeast;
 }
-}
+
+
+/* tablet to medium screens */
 
 @media screen and (min-width: 750px) and (max-width: 1199px) {
     .pandoraBox {
@@ -449,43 +437,97 @@ h4 span {
     }
 
     .whoIAm {
-        height: 70rem;
+        height: 90rem;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* background-color: beige; */
+        background-color: beige;
         grid-area: whoIAm;
     }
     
     .profileBox {
         width: 100%;
         display: flex;
-        align-items: start;
+        align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
         /* background-color: aqua; */
     }
+
     /* a container for my picture */
     .picMe {
-        /* margin: 2.5rem; */
-        /* position: absolute;
-        top: 10rem; */
-        height: 500px;
-        width: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 150px;
+        position: relative;
+        top: -8rem;
+        height: 400px;
+        width: 400px;  
         
     }
+
+    .workArt {
+        height: 120rem;
+        flex-direction: column;
+    }
+
+    .workBox {
+        height: 115rem;
+        width: 100%;
+    }
     
-    .picMe img {
-        height: inherit;
-        width: inherit;
-        border-radius: 100px;
-        /* add a box shadow effect */
-        box-shadow: 7px 9px 9px 4px rgba(0, 0, 0, 0.2);
+    /* a grid within a container of a grid for my work to be displayed */
+    .artGrid {
+        position: relative;
+        top: 7rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+        'workTitle'
+        'workOne'
+        'workTwo'
+        'workThree' 
+        'workFour';
+        grid-gap: 1rem;
+    }
+
+    .workOne  {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workTwo {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workThree {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workFour {
+        height: 300px;
+        width: 500px;
+    }
+    
+    .workOne img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workTwo img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workThree img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workFour img {
+        height: 300px;
+        width: 500px;
     }
 }
 
