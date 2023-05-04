@@ -4,36 +4,85 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: 'Foldit';
     font-weight: 400;
+    font-size: 19px;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    /* color scheme for important Titles */
+h1 span {
+    color: #2BF4A6;
+}
+
+h2 span {
+    color: #ff7f50;
+}
+
+h4 span {
+    color: #ffffff;
 }
 
 /* this is the container box that all web content will go into.  It is a grid */
+
 .pandoraBox {
+    margin: 0;
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 0.7fr 1fr 0.7fr 1.2fr 0.8fr;
-    grid-template-areas: 'naviGate naviGate naviGate naviGate'
+    width: 100%;
+    justify-content: space-between;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    'naviGate naviGate naviGate naviGate naviGate naviGate naviGate naviGate naviGate naviGate naviGate naviGate'
+    'whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm whoIAm'
+    'workArt workArt workArt workArt workArt workArt workArt workArt workArt workArt workArt workArt'
+    'reachMe reachMe reachMe reachMe reachMe reachMe reachMe reachMe reachMe reachMe reachMe reachMe'
+    'needAJob needAJob needAJob needAJob needAJob needAJob needAJob needAJob needAJob needAJob needAJob needAJob'
+    'lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast lastNotLeast';
+    /* flex-grow: 1; */
+    gap: 0.25rem;
+}
+
+/* .container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 4fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
     'whoIAm whoIAm whoIAm whoIAm'
     'workArt workArt workArt workArt'
     'reachMe reachMe reachMe reachMe'
-    'needAJob needAJob needAJob needAJob'
-    'lastNotLeast lastNotLeast lastNotLeast lastNotLeast';
-    grid-gap: 0.25rem;
-}
+    'needAJob needAJob needAJob needAJob';
+    grid-gap: 0.5rem;
+    background-color: bisque;
+    grid-area: container;
+} */
+
 
 /* navigation purposes */
 .naviGate {
     padding-right: 0.5rem;
     height: 5rem;
+    width: 100%;
+    position: fixed;
     background-color: #63b8dc;
     grid-area: naviGate;
     display: flex;
     align-items: end;
     justify-content: end;
+    z-index: 10000;
 }
 
 /* this puts the navigation tabs to the bottom and right of the navigation bar */
@@ -45,8 +94,6 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     list-style: none;
-    color: #ff7f50;
-    font-size: 17px;
 }
 
 /* .naviGate > a:link {
@@ -64,7 +111,7 @@ body {
     height: 3rem;
     width: 100px;
     text-decoration: none;
-    color: #ff7f50;
+    color: #2BF4A6;
 }
 
 /* changes font size when hovered over with a mouse */
@@ -77,15 +124,27 @@ body {
 
 /* container for a brief summary about me.  It is a direct child of the grid */
 .whoIAm {
-    height: 40rem;
+    height: 50rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: beige; */
     grid-area: whoIAm;
 }
 
+.profileBox {
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    background-color: aqua;
+}
 /* a container for my picture */
 .picMe {
     margin: 2.5rem;
-    position: absolute;
-    top: 10rem;
+    /* position: absolute;
+    top: 10rem; */
     height: 300px;
     width: 300px;
     display: flex;
@@ -105,15 +164,18 @@ body {
 
 /* my name */
 .picMe h1 {
-    position: absolute;
-    top: 20rem;
+    position: relative;
+    top: 14rem;
+    right: 13rem;
+    /* position: absolute;
+    top: 20rem; */
 }
 
 /* the short summary of who I am */
 .thisIAm {
-    position: absolute;
+    /* position: absolute;
     top: 12rem;
-    left: 35rem;
+    left: 35rem; */
     height: 485px;
     width: 620px;
     box-shadow: 5px 7px 9px 10px rgba(0, 0, 0, 0.2);
@@ -128,12 +190,14 @@ body {
     position: relative;
     height: 465px;
     width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #63b8dc;
     transform: rotate(5deg);
 }
 
 .thisIAm2 p {
-    font-size: 17px;
     line-height: 2;
     text-indent: 50px;
     word-spacing: 0.15rem;
@@ -141,31 +205,45 @@ body {
 
 /* container for my coding work */
 .workArt {
-    height: 80rem;
+    height: 70rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* grid-column: 6/10;
+    grid-row: 3; */
     grid-area: workArt;
 }
 
-.workTitle {
-    margin: 3rem 0 5rem 0;
-    position: absolute;
-    bottom: -7rem;
-    font-size: 20px;
+.workBox {
+    height: 45rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #e6e4e4;
 }
 
 /* a grid within a container of a grid for my work to be displayed */
 .artGrid {
+    position: relative;
+    top: 7rem;
     display: grid;
-    grid-template-columns: 4fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    'workOne'
-    'workTwo'
-    'workThree' 
-    'workFour';
+    'workTitle workTitle'
+    'workOne workOne'
+    'workTwo workTwo'
+    'workThree workThree' 
+    'workFour workFour';
     grid-gap: 4rem;
+}
+
+.workTitle {
+    font-size: 20px;
+    grid-area: workTitle;
 }
 
 .workOne {
@@ -247,6 +325,7 @@ body {
 /* the container for my contacts */
 .reachMe {
     height: 40rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,7 +334,7 @@ body {
 
 .contactBox {
     padding: 1rem;
-    height: 20rem;
+    height: 23rem;
     width: 40rem;
     text-align: center;
     border-radius: 10px;
@@ -272,14 +351,32 @@ body {
     margin: 0.75rem 0;
 }
 
+.contactBox p a:link {
+    color: #2BF4A6;
+}
+
+.contactBox p a:visited {
+    color: #f42bc5;
+}
+
 /* container for my resume */
 .needAJob {
     height: 70rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    grid-area: needAJob;
+}
+
+.oppBox {
+    height: 70rem;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ff7f50;
-    grid-area: needAJob;
 }
 
 /* .resumeBox {
@@ -288,6 +385,13 @@ body {
     /* /* height: 500px; */
     /* width: 400px;
 } */
+
+.needAJob h2 {
+    position: relative;
+    top: -30rem;
+    left: 18rem;
+    color: #63b8dc;
+}
 
 /* the resume */
 .resumeBox img {
@@ -298,11 +402,59 @@ body {
 
 /* the footer */
 .lastNotLeast {
+    
     height: 5rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #63b8dc;
     grid-area: lastNotLeast;
 }
+}
 
+@media screen and (min-width: 770px) {
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 750px) {
+    .pandoraBox {
+        display: grid;
+        height: 100vh;
+        width: 80%;
+        grid-template-columns: 4fr;
+        grid-template-rows: 0.3fr 0.7fr 1fr 0.7fr 1.2fr 0.8fr;
+        grid-template-areas: 
+        'naviGate'
+        'whoIAm'
+        'workArt'
+        'reachMe'
+        'needAJob'
+        'lastNotLeast';
+        grid-gap: 0.25rem;
+    }
+
+    .naviGate {
+        width: 100%;
+    }
+
+    .whoIAm {
+        width: 100%;
+    }
+
+    .workArt {
+        width: 100%;
+    }
+
+    .reachMe {
+        width: 100%;
+    }
+
+    .needAJob {
+        width: 100%;
+    }
+
+    .lastNotLeast {
+        width: 100%;
+    }
+}
