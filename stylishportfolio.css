@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Foldit';
+    font-family: 'Instrument Serif', serif;
     font-weight: 400;
     font-size: 19px;
 }
@@ -50,24 +50,6 @@ h4 span {
     gap: 0.25rem;
 }
 
-/* .container {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 4fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    'whoIAm whoIAm whoIAm whoIAm'
-    'workArt workArt workArt workArt'
-    'reachMe reachMe reachMe reachMe'
-    'needAJob needAJob needAJob needAJob';
-    grid-gap: 0.5rem;
-    background-color: bisque;
-    grid-area: container;
-} */
-
 
 /* navigation purposes */
 .naviGate {
@@ -94,14 +76,6 @@ h4 span {
     list-style: none;
 }
 
-/* .naviGate > a:link {
-    color: #ff7f50;
-}
-
-.naviGate > a:visited {
-    color: #ff7f50;
-} */
-
 .naviGate ul li a:link, a:visited {
     display: flex;
     justify-content: center;
@@ -115,9 +89,9 @@ h4 span {
 /* changes font size when hovered over with a mouse */
 .naviGate ul li:hover {
     cursor: pointer;
-    font-size: 20px;
-   /* need to add transition */
-   /* make buttons when pushed take user to that section of the page */
+    font-size: 25px;
+    transition: font-size 0.15s ease-out;
+   
 }
 
 /* container for a brief summary about me.  It is a direct child of the grid */
@@ -131,16 +105,17 @@ h4 span {
     grid-area: whoIAm;
 }
 
+/* container for my picture and summary */
 .profileBox {
     width: 80%;
     display: flex;
     align-items: start;
     justify-content: space-evenly;
-    /* background-color: aqua; */
 }
+
 /* a container for my picture */
 .picMe {
-    margin: 2.5rem;
+    margin-right: 9rem;
     height: 300px;
     width: 300px;
     text-align: center;
@@ -193,16 +168,15 @@ h4 span {
 
 /* container for my coding work */
 .workArt {
-    height: 70rem;
+    height: 55rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* grid-column: 6/10;
-    grid-row: 3; */
     grid-area: workArt;
 }
 
+/* container within a container which holds the grid */
 .workBox {
     height: 45rem;
     width: 80%;
@@ -210,7 +184,6 @@ h4 span {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #e6e4e4;
 }
 
 /* a grid within a container of a grid for my work to be displayed */
@@ -234,6 +207,7 @@ h4 span {
     grid-area: workTitle;
 }
 
+/* picture of past work */
 .workOne {
     height: 200px;
     width: 400px;
@@ -247,6 +221,7 @@ h4 span {
     transition: width 0.25s, height 0.25s ease-in-out;
 }
 
+/* what happens when you hover the mouse over the pictures */
 .workOne img:hover {
     height: 250px;
     width: 450px;
@@ -320,6 +295,7 @@ h4 span {
     grid-area: reachMe;
 }
 
+/* container within a container for my contacts */
 .contactBox {
     padding: 1rem;
     height: 23rem;
@@ -354,17 +330,24 @@ h4 span {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     grid-area: needAJob;
 }
 
+/* container within a container holding the resume image */
 .oppBox {
     height: 70rem;
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background-color: #ff7f50;
+}
+
+.oppBox img {
+    position: absolute;
+    height: 700px;
+    width: 600px;
 }
 
 /* .resumeBox {
@@ -374,19 +357,12 @@ h4 span {
     /* width: 400px;
 } */
 
-.needAJob h2 {
+.oppBox  h2 {
     position: relative;
-    top: -30rem;
-    left: 18rem;
+    bottom: 25rem;
     color: #63b8dc;
 }
 
-/* the resume */
-.resumeBox img {
-    
-    height: 700px;
-    width: 500px;
-}
 
 /* the footer */
 .lastNotLeast {
@@ -425,15 +401,15 @@ h4 span {
 
     .naviGate {
         padding-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 10000;
         height: 5rem;
         width: 100%;
         position: fixed;
         background-color: #63b8dc;
         grid-area: naviGate;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        z-index: 10000;
     }
 
     .whoIAm {
@@ -528,6 +504,11 @@ h4 span {
     .workFour img {
         height: 300px;
         width: 500px;
+    }
+
+    .oppBox img {
+        height: 600px;
+        width: 400px;
     }
 }
 
