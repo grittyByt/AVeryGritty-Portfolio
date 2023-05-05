@@ -101,7 +101,6 @@ h4 span {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: beige; */
     grid-area: whoIAm;
 }
 
@@ -400,7 +399,7 @@ h4 span {
     }
 
     .naviGate {
-        padding-right: 0.5rem;
+        /* padding-right: 0.5rem; */
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -418,7 +417,6 @@ h4 span {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: beige;
         grid-area: whoIAm;
     }
     
@@ -427,13 +425,18 @@ h4 span {
         display: flex;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         /* background-color: aqua; */
     }
 
     /* a container for my picture */
     .picMe {
+        margin-right: 0;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         top: -8rem;
         height: 400px;
         width: 400px;  
@@ -512,13 +515,16 @@ h4 span {
     }
 }
 
-@media screen and (min-width: 480px) and (max-width: 750px) {
+/* screen size for medium and small cellphones */
+
+@media screen and (min-width: 250px) and (max-width: 750px) {
+
     .pandoraBox {
         display: grid;
         height: 100vh;
-        width: 80%;
-        grid-template-columns: 4fr;
-        grid-template-rows: 0.3fr 0.7fr 1fr 0.7fr 1.2fr 0.8fr;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         grid-template-areas: 
         'naviGate'
         'whoIAm'
@@ -530,26 +536,114 @@ h4 span {
     }
 
     .naviGate {
+        /* padding-right: 0.5rem; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 10000;
+        height: 5rem;
         width: 100%;
+        position: fixed;
+        background-color: #63b8dc;
+        grid-area: naviGate;
     }
 
     .whoIAm {
+        height: 90rem;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: whoIAm;
+    }
+    
+    .profileBox {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    /* a container for my picture */
+    .picMe {
+        margin-right: 0;
+        position: relative;
+        top: -8rem;
+        height: 400px;
+        width: 400px;  
+        
     }
 
     .workArt {
-        width: 100%;
+        height: 120rem;
+        flex-direction: column;
     }
 
-    .reachMe {
+    .workBox {
+        height: 115rem;
         width: 100%;
     }
-
-    .needAJob {
-        width: 100%;
+    
+    /* a grid within a container of a grid for my work to be displayed */
+    .artGrid {
+        position: relative;
+        top: 7rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+        'workTitle'
+        'workOne'
+        'workTwo'
+        'workThree' 
+        'workFour';
+        grid-gap: 1rem;
     }
 
-    .lastNotLeast {
-        width: 100%;
+    .workOne  {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workTwo {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workThree {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workFour {
+        height: 300px;
+        width: 500px;
+    }
+    
+    .workOne img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workTwo img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workThree img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .workFour img {
+        height: 300px;
+        width: 500px;
+    }
+
+    .oppBox img {
+        height: 600px;
+        width: 400px;
     }
 }
